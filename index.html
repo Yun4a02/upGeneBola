@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TOGELUP - Dashboard Generator Dynamic V8</title>
+  <title>TOGELUP - Dashboard Generator Dynamic V9 Mobile</title>
   <style>
     :root {
       --primary: #00ffd5;
@@ -194,10 +194,15 @@
     }
 
     @media (max-width: 760px) {
-      body { padding: 12px; }
-      .main-container { padding: 18px; border-radius: 22px; }
+      body { padding: 10px; }
+      .main-container { padding: 16px; border-radius: 22px; }
       .form-grid, .btn-group { grid-template-columns: 1fr; }
-      .header h1 { letter-spacing: 5px; }
+      .header { margin-bottom: 18px; padding-bottom: 16px; }
+      .header h1 { letter-spacing: 5px; font-size: 34px; }
+      .header p { font-size: 10px; letter-spacing: 1.4px; line-height: 1.5; }
+      input, textarea { font-size: 13px; padding: 13px; }
+      textarea#inputData { min-height: 230px; }
+      #livePreview { padding: 8px; border-radius: 16px; }
     }
   </style>
 </head>
@@ -205,7 +210,7 @@
   <div class="main-container">
     <div class="header">
       <h1>TOGELUP</h1>
-      <p>⚡ Generator Dashboard Dinamis - Paste Liga Langsung Update Data ⚡</p>
+      <p>⚡ Generator Dashboard Dinamis + Responsive Mobile ⚡</p>
     </div>
 
     <div class="form-grid">
@@ -229,7 +234,7 @@
     </div>
 
     <div class="btn-group">
-      <button class="btn-gen" onclick="generateDashboard()">🚀 Generate Dashboard Besar</button>
+      <button class="btn-gen" onclick="generateDashboard()">🚀 Generate Dashboard + Mobile</button>
       <button class="btn-copy" onclick="copyCode()">📋 Salin Kode HTML</button>
     </div>
 
@@ -559,16 +564,145 @@
       opacity: .9;
       text-shadow: 0 0 12px rgba(0,255,213,.7);
     }
+    /* ===============================
+       RESPONSIVE MOBILE VERSION
+       Tampilan ini otomatis aktif di HP.
+       Desktop tetap besar, mobile dibuat fit tanpa kepotong.
+    =============================== */
     @media (max-width: 760px) {
-      #tgup-dash-pro { padding: 16px; border-radius: 22px; }
-      #tgup-dash-pro .tg-logo-box { min-height: 210px; gap: 3px; }
-      #tgup-dash-pro .tg-logo-box img { width: min(100%, 520px); max-height: 160px; }
-      #tgup-dash-pro .tg-main-title { font-size: 30px; letter-spacing: 4px; margin-top: -10px; transform: translateY(-8px); }
-      #tgup-dash-pro .tg-control-row { grid-template-columns: 1fr; padding: 12px; }
-      #tgup-dash-pro .tg-table { min-width: 720px; }
-      #tgup-dash-pro .tg-table td { padding: 18px 14px; }
-      #tgup-dash-pro .tg-team { font-size: 14px; }
-      #tgup-dash-pro .tg-score { font-size: 29px; min-width: 116px; }
+      #tgup-dash-pro {
+        width: 100%;
+        max-width: 100%;
+        margin: 8px auto;
+        padding: 14px;
+        border-radius: 22px;
+        background-size: cover;
+        background-position: center top;
+      }
+
+      #tgup-dash-pro .tg-logo-box {
+        min-height: 190px;
+        margin-bottom: 14px;
+        gap: 0;
+        border-radius: 20px;
+      }
+
+      #tgup-dash-pro .tg-logo-box img {
+        width: min(100%, 560px);
+        max-height: 155px;
+      }
+
+      #tgup-dash-pro .tg-main-title {
+        margin-top: -14px;
+        transform: translateY(-12px);
+        font-size: clamp(27px, 8vw, 38px);
+        letter-spacing: 4px;
+        line-height: .95;
+      }
+
+      #tgup-dash-pro .tg-control-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 12px;
+        margin-bottom: 14px;
+        border-radius: 18px;
+      }
+
+      #tgup-dash-pro .tg-date,
+      #tgup-dash-pro .tg-select {
+        height: 52px;
+        min-height: 52px;
+        padding: 0 14px;
+        border-radius: 14px;
+        font-size: 13.5px;
+      }
+
+      #tgup-dash-pro .tg-running {
+        margin-bottom: 16px;
+        padding: 13px 14px;
+        border-radius: 15px;
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+
+      #tgup-dash-pro .tg-group {
+        margin-bottom: 17px;
+        border-radius: 19px;
+      }
+
+      #tgup-dash-pro .tg-league-title {
+        padding: 14px 10px;
+        font-size: 13px;
+        letter-spacing: 1px;
+        line-height: 1.35;
+      }
+
+      #tgup-dash-pro .tg-table-wrap {
+        overflow-x: hidden;
+      }
+
+      #tgup-dash-pro .tg-table,
+      #tgup-dash-pro .tg-table tbody {
+        display: block;
+        width: 100%;
+        min-width: 0;
+      }
+
+      #tgup-dash-pro .tg-table tr {
+        display: grid;
+        grid-template-columns: 1fr 94px 1fr;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        padding: 15px 10px;
+      }
+
+      #tgup-dash-pro .tg-table td {
+        display: block;
+        width: auto;
+        padding: 0;
+      }
+
+      #tgup-dash-pro .tg-team {
+        font-size: 12.6px;
+        line-height: 1.3;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+
+      #tgup-dash-pro .tg-center {
+        width: auto;
+      }
+
+      #tgup-dash-pro .tg-score {
+        min-width: 86px;
+        min-height: 48px;
+        padding: 8px 10px;
+        border-radius: 14px;
+        font-size: 23px;
+      }
+
+      #tgup-dash-pro .tg-time {
+        margin-top: 6px;
+        font-size: 8.5px;
+        letter-spacing: 0;
+      }
+
+      #tgup-dash-pro .tg-footer {
+        font-size: 9.5px;
+        letter-spacing: 1.2px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      #tgup-dash-pro { padding: 11px; border-radius: 18px; }
+      #tgup-dash-pro .tg-logo-box { min-height: 170px; }
+      #tgup-dash-pro .tg-logo-box img { max-height: 138px; }
+      #tgup-dash-pro .tg-main-title { font-size: 28px; letter-spacing: 3px; }
+      #tgup-dash-pro .tg-table tr { grid-template-columns: 1fr 80px 1fr; gap: 6px; padding: 14px 8px; }
+      #tgup-dash-pro .tg-team { font-size: 11.4px; }
+      #tgup-dash-pro .tg-score { min-width: 74px; min-height: 44px; font-size: 21px; padding: 7px 8px; }
+      #tgup-dash-pro .tg-time { font-size: 8px; }
     }
   </style>
 

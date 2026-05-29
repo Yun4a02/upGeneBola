@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TOGELUP - Dashboard Generator Dynamic V6</title>
+  <title>TOGELUP - Dashboard Generator Dynamic V8</title>
   <style>
     :root {
       --primary: #00ffd5;
@@ -381,10 +381,12 @@
     #tgup-dash-pro > * { position: relative; z-index: 1; }
     #tgup-dash-pro .tg-logo-box {
       width: 100%;
-      min-height: 230px;
+      min-height: 270px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      gap: 4px;
       border-radius: 24px;
       margin-bottom: 18px;
       background: linear-gradient(180deg, rgba(0,30,27,.74), rgba(0,0,0,.48));
@@ -392,10 +394,29 @@
       box-shadow: inset 0 0 28px rgba(0,255,213,.08);
     }
     #tgup-dash-pro .tg-logo-box img {
-      width: min(92%, 560px);
-      max-height: 190px;
+      width: min(98%, 720px);
+      max-height: 230px;
       object-fit: contain;
       filter: drop-shadow(0 0 12px rgba(0,255,213,.9)) drop-shadow(0 0 26px rgba(0,166,255,.42));
+    }
+    #tgup-dash-pro .tg-main-title {
+      margin: -12px 0 0;
+      padding: 0;
+      transform: translateY(-10px);
+      color: #ffffff;
+      font-size: clamp(28px, 4.2vw, 54px);
+      line-height: 1;
+      font-weight: 1000;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+      text-align: center;
+      text-shadow:
+        0 0 10px rgba(0,255,213,.75),
+        0 0 24px rgba(0,166,255,.42),
+        0 3px 0 rgba(0,0,0,.8);
+    }
+    #tgup-dash-pro .tg-main-title span {
+      color: var(--cyan);
     }
     #tgup-dash-pro .tg-control-row {
       display: grid;
@@ -540,8 +561,9 @@
     }
     @media (max-width: 760px) {
       #tgup-dash-pro { padding: 16px; border-radius: 22px; }
-      #tgup-dash-pro .tg-logo-box { min-height: 160px; }
-      #tgup-dash-pro .tg-logo-box img { width: min(98%, 430px); max-height: 135px; }
+      #tgup-dash-pro .tg-logo-box { min-height: 210px; gap: 3px; }
+      #tgup-dash-pro .tg-logo-box img { width: min(100%, 520px); max-height: 160px; }
+      #tgup-dash-pro .tg-main-title { font-size: 30px; letter-spacing: 4px; margin-top: -10px; transform: translateY(-8px); }
       #tgup-dash-pro .tg-control-row { grid-template-columns: 1fr; padding: 12px; }
       #tgup-dash-pro .tg-table { min-width: 720px; }
       #tgup-dash-pro .tg-table td { padding: 18px 14px; }
@@ -552,6 +574,7 @@
 
   <div class="tg-logo-box">
     <img src="${DEFAULT_LOGO}" alt="TogelUP Logo" />
+    <h2 class="tg-main-title">PREDIKSI <span>BOLA</span></h2>
   </div>
 
   <div class="tg-control-row">

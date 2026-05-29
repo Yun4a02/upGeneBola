@@ -221,7 +221,7 @@
 
       <div class="input-group">
         <label>🔥 Running Text</label>
-        <input type="text" id="inputMarquee" value="PREDIKSI BOLA TERUPDATE TOGELUP! DAFTAR SEKARANG DAN MENANGKAN JACKPOT ANDA!" />
+        <input type="text" id="inputMarquee" value="TOGELUP TERUPDATE! DAFTAR SEKARANG DAN MENANGKAN JACKPOT ANDA!" />
       </div>
 
       <div class="input-group full">
@@ -246,7 +246,7 @@
 
   <script>
     const DEFAULT_BG = "https://cdn.areabermain.club/assets/cdn/az5/2026/04/03/20260403/f2e48b747f68e5aece507a90edf81698/togel-up-background-mobile.jpg";
-    const DEFAULT_LOGO = "https://cdn.areabermain.club/assets/cdn/az5/2026/05/29/20260529/46236f951e1bbd958b1c0c3d464d3983/logo-togelup-transparent.png";
+    const DEFAULT_LOGO = "https://cdn.areabermain.club/assets/cdn/az5/2026/05/29/20260529/891d078dfb7eafea9e076c4e6a0c8d44/togelup-togel-hijau-transparan-clean.png";
 
     function escapeHTML(value) {
       return String(value ?? "")
@@ -300,7 +300,7 @@
       lines.forEach(line => {
         if (/\s+vs\s+/i.test(line)) {
           if (!currentLeague) {
-            currentLeague = { name: "PREDIKSI BOLA", matches: [] };
+            currentLeague = { name: "", matches: [] };
             leagues.push(currentLeague);
           }
           currentLeague.matches.push(parseMatchLine(line));
@@ -391,7 +391,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 4px;
+      gap: 0;
       border-radius: 24px;
       margin-bottom: 18px;
       background: linear-gradient(180deg, rgba(0,30,27,.74), rgba(0,0,0,.48));
@@ -403,25 +403,6 @@
       max-height: 230px;
       object-fit: contain;
       filter: drop-shadow(0 0 12px rgba(0,255,213,.9)) drop-shadow(0 0 26px rgba(0,166,255,.42));
-    }
-    #tgup-dash-pro .tg-main-title {
-      margin: -12px 0 0;
-      padding: 0;
-      transform: translateY(-10px);
-      color: #ffffff;
-      font-size: clamp(28px, 4.2vw, 54px);
-      line-height: 1;
-      font-weight: 1000;
-      letter-spacing: 7px;
-      text-transform: uppercase;
-      text-align: center;
-      text-shadow:
-        0 0 10px rgba(0,255,213,.75),
-        0 0 24px rgba(0,166,255,.42),
-        0 3px 0 rgba(0,0,0,.8);
-    }
-    #tgup-dash-pro .tg-main-title span {
-      color: var(--cyan);
     }
     #tgup-dash-pro .tg-control-row {
       display: grid;
@@ -592,14 +573,6 @@
         max-height: 155px;
       }
 
-      #tgup-dash-pro .tg-main-title {
-        margin-top: -14px;
-        transform: translateY(-12px);
-        font-size: clamp(27px, 8vw, 38px);
-        letter-spacing: 4px;
-        line-height: .95;
-      }
-
       #tgup-dash-pro .tg-control-row {
         grid-template-columns: 1fr;
         gap: 10px;
@@ -698,7 +671,6 @@
       #tgup-dash-pro { padding: 11px; border-radius: 18px; }
       #tgup-dash-pro .tg-logo-box { min-height: 170px; }
       #tgup-dash-pro .tg-logo-box img { max-height: 138px; }
-      #tgup-dash-pro .tg-main-title { font-size: 28px; letter-spacing: 3px; }
       #tgup-dash-pro .tg-table tr { grid-template-columns: 1fr 80px 1fr; gap: 6px; padding: 14px 8px; }
       #tgup-dash-pro .tg-team { font-size: 11.4px; }
       #tgup-dash-pro .tg-score { min-width: 74px; min-height: 44px; font-size: 21px; padding: 7px 8px; }
@@ -708,7 +680,6 @@
 
   <div class="tg-logo-box">
     <img src="${DEFAULT_LOGO}" alt="TogelUP Logo" />
-    <h2 class="tg-main-title">PREDIKSI <span>BOLA</span></h2>
   </div>
 
   <div class="tg-control-row">
